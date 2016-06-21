@@ -16,4 +16,13 @@ The sorting algorithms described here use `Compareable` and `Comparator` interfa
 		Lomuto (`info.kolegov.sort.quicksort.LomutoQuickSort`)
     </td>
   </tr>
+  <tr>
+    <td>Mergesort</td>
+    <td>
+		Main resource is https://en.wikipedia.org/wiki/Merge_sort
+		Two different algorithms:
+		Top-down implementation (`info.kolegov.sort.mergesort.BottomUpMergeSort`) and
+		Bottom-up implementation (`info.kolegov.sort.mergesort.TopDownMergeSort`)
+    </td>
+  </tr>
 </table>

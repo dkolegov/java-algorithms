@@ -8,20 +8,19 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import info.kolegov.sort.mergesort.BottomUpMergeSort;
+import info.kolegov.sort.mergesort.TopDownMergeSort;
 import info.kolegov.sort.quicksort.HoareQuickSort;
 import info.kolegov.sort.quicksort.LomutoQuickSort;
 
 public class SortTest {
 
-	private void testSort(Sorter sorter) {
+	private void testSort(Sorter sorter, int listSize, int stepSize) {
 		System.out.println("Test a Comparable Sorter of " + sorter.getClass());
-		for (int i=0; i<20; i++) {
-			List<Integer> list = new LinkedList<Integer>();
-			for (int j=0; j<20; j++) {
-				list.add(j);
-			}
+		for (int i=0; i<stepSize; i++) {
+			List<Integer> list = createShuffledIntList(listSize);
 			System.out.println(" Step " + i);
-		    Collections.shuffle(list);
+
 		    Assert.assertFalse(isSorted(list));
 		    System.out.println("	Shuffled: " + list);
 		    sorter.sort(list);
@@ -42,13 +41,9 @@ public class SortTest {
 				}
 			}
 		};
-		for (int i=0; i<20; i++) {
-			List<Integer> list = new LinkedList<Integer>();
-			for (int j=0; j<20; j++) {
-				list.add(j);
-			}
+		for (int i=0; i<stepSize; i++) {
+			List<Integer> list = createShuffledIntList(listSize);
 			System.out.println(" Step " + i);
-		    Collections.shuffle(list);
 		    Assert.assertFalse(isSorted(list));
 		    System.out.println("	Shuffled: " + list);
 		    sorter.sort(list, c);
@@ -75,9 +70,24 @@ public class SortTest {
 		return true;
 	}
 
+	private List<Integer> createShuffledIntList(int size) {
+		List<Integer> list = new LinkedList<Integer>();
+		for (int j=0; j<size; j++) {
+			list.add(j);
+		}
+	    Collections.shuffle(list);
+	    return list;
+	}
+
 	@Test
 	public void testQuickSort() {
-		testSort(new HoareQuickSort());
-		testSort(new LomutoQuickSort());
+		testSort(new HoareQuickSort(), 20, 3);
+		testSort(new LomutoQuickSort(), 20, 3);
+	}
+
+	@Test
+	public void testMergeSort() {
+		testSort(new TopDownMergeSort(), 25, 3);
+		testSort(new BottomUpMergeSort(), 25, 3);
 	}
 }
