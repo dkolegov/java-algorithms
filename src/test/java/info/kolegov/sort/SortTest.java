@@ -98,4 +98,16 @@ public class SortTest {
 		testSort(new SiftDownHeapsorter(), list);
 		testSort(new SiftUpHeapsorter(), list);
 	}
+
+	@Test
+	public void testInsertionSort() {
+		list = createShuffledIntList(25);
+		testSort(new InsertionSorter(), list);
+	}
+
+	@Test
+	public void testSelectionSort() {
+		list = createShuffledIntList(25);
+		testSort(new SelectionSorter(), list);
+	}
 }
