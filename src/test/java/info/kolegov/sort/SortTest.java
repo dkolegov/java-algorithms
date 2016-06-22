@@ -1,5 +1,6 @@
 package info.kolegov.sort;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -8,48 +9,46 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import info.kolegov.sort.mergesort.BottomUpMergeSort;
-import info.kolegov.sort.mergesort.TopDownMergeSort;
-import info.kolegov.sort.quicksort.HoareQuickSort;
-import info.kolegov.sort.quicksort.LomutoQuickSort;
+import info.kolegov.sort.heapsort.SiftDownHeapsorter;
+import info.kolegov.sort.heapsort.SiftUpHeapsorter;
+import info.kolegov.sort.mergesort.BottomUpMergeSorter;
+import info.kolegov.sort.mergesort.TopDownMergeSorter;
+import info.kolegov.sort.quicksort.HoareQuickSorter;
+import info.kolegov.sort.quicksort.LomutoQuickSorter;
 
 public class SortTest {
 
-	private void testSort(Sorter sorter, int listSize, int stepSize) {
-		System.out.println("Test a Comparable Sorter of " + sorter.getClass());
-		for (int i=0; i<stepSize; i++) {
-			List<Integer> list = createShuffledIntList(listSize);
-			System.out.println(" Step " + i);
+	private Comparator<Integer> c = new Comparator<Integer>() {
 
-		    Assert.assertFalse(isSorted(list));
-		    System.out.println("	Shuffled: " + list);
-		    sorter.sort(list);
-		    System.out.println("	Sorted: " + list);
-		    Assert.assertTrue(isSorted(list));
-		}
-		
-		System.out.println("Test a Comparator Sorter of " + sorter.getClass());
-		Comparator<Integer> c = new Comparator<Integer>() {
-
-			public int compare(Integer arg0, Integer arg1) {
-				if (arg0 > arg1) {
-					return -1;
-				} else if (arg0 < arg1) {
-					return 1;
-				} else {
-					return 0;
-				}
+		public int compare(Integer arg0, Integer arg1) {
+			if (arg0 > arg1) {
+				return -1;
+			} else if (arg0 < arg1) {
+				return 1;
+			} else {
+				return 0;
 			}
-		};
-		for (int i=0; i<stepSize; i++) {
-			List<Integer> list = createShuffledIntList(listSize);
-			System.out.println(" Step " + i);
-		    Assert.assertFalse(isSorted(list));
-		    System.out.println("	Shuffled: " + list);
-		    sorter.sort(list, c);
-		    System.out.println("	Sorted: " + list);
-		    Assert.assertTrue(isSorted(list, c));
 		}
+	};
+
+	private List<Integer> list;
+
+	private void testSort(Sorter sorter, List<Integer> list) {
+		System.out.println(sorter.getClass().getSimpleName() + " with 'Comparable'");
+		List<Integer> listToSort = new ArrayList<Integer>(list);
+	    Assert.assertFalse(isSorted(listToSort));
+	    System.out.println("	Shuffled: " + listToSort);
+	    sorter.sort(listToSort);
+	    System.out.println("	Sorted: " + listToSort);
+	    Assert.assertTrue(isSorted(listToSort));
+	
+	    System.out.println(sorter.getClass().getSimpleName() + " with 'Comparator'");
+	    listToSort  = new ArrayList<Integer>(list);
+	    Assert.assertFalse(isSorted(listToSort));
+	    System.out.println("	Shuffled: " + listToSort);
+	    sorter.sort(listToSort, c);
+	    System.out.println("	Sorted: " + listToSort);
+	    Assert.assertTrue(isSorted(listToSort, c));
 	}
 
 	private <T extends Comparable<T>> boolean isSorted(List<T> list) {
@@ -80,14 +79,23 @@ public class SortTest {
 	}
 
 	@Test
-	public void testQuickSort() {
-		testSort(new HoareQuickSort(), 20, 3);
-		testSort(new LomutoQuickSort(), 20, 3);
+	public void testQuicksort() {
+		list = createShuffledIntList(25);
+		testSort(new HoareQuickSorter(), list);
+		testSort(new LomutoQuickSorter(), list);
 	}
 
 	@Test
-	public void testMergeSort() {
-		testSort(new TopDownMergeSort(), 25, 3);
-		testSort(new BottomUpMergeSort(), 25, 3);
+	public void testMergesort() {
+		list = createShuffledIntList(25);
+		testSort(new TopDownMergeSorter(), list);
+		testSort(new BottomUpMergeSorter(), list);
+	}
+
+	@Test
+	public void testHeapsort() {
+		list = createShuffledIntList(25);
+		testSort(new SiftDownHeapsorter(), list);
+		testSort(new SiftUpHeapsorter(), list);
 	}
 }

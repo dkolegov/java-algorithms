@@ -11,7 +11,7 @@ import java.util.List;
  * @author Dmitry
  *
  */
-public class HoareQuickSort extends QuickSort {
+public class HoareQuickSorter extends QuickSorter {
 
 	@Override
 	protected <T extends Comparable<? super T>> void quickSort(List<T> list, int lo, int hi) {

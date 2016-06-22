@@ -10,7 +10,7 @@ import java.util.List;
  * @author Dmitry
  *
  */
-public class LomutoQuickSort extends QuickSort {
+public class LomutoQuickSorter extends QuickSorter {
 
 	@Override
 	protected <T extends Comparable<? super T>> void quickSort(List<T> list, int lo, int hi) {

@@ -7,7 +7,7 @@ import java.util.List;
 
 import info.kolegov.sort.Sorter;
 
-public class TopDownMergeSort implements Sorter {
+public class TopDownMergeSorter implements Sorter {
 
 	public <T extends Comparable<? super T>> void sort(List<T> list) {
 		List<T> result = mergeSort(list);

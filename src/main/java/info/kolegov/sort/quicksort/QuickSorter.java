@@ -17,7 +17,7 @@ import info.kolegov.sort.Sorter;
  * @author Dmitry
  *
  */
-public abstract class QuickSort implements Sorter {
+public abstract class QuickSorter implements Sorter {
 
 	abstract protected <T extends Comparable<? super T>> void quickSort(List<T> list, int lo, int hi);
 
