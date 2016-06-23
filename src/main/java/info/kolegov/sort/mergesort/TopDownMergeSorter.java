@@ -1,141 +1,51 @@
 package info.kolegov.sort.mergesort;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
 
 import info.kolegov.sort.Sorter;
 
-public class TopDownMergeSorter implements Sorter {
+public class TopDownMergeSorter extends Sorter {
 
-	public <T extends Comparable<? super T>> void sort(List<T> list) {
-		List<T> result = mergeSort(list);
-		list.clear();
-		list.addAll(result);
+	@Override
+	public <T> void sort(Object[] list, Comparator<? super T> c) {
+		Object[] tmp = new Object[list.length];
+		topDownSplitMerge(list, 0, list.length, tmp, c);
 	}
 
-	private <T extends Comparable<? super T>> List<T> mergeSort(List<T> m) {
-	    // Base case. A list of zero or one elements is sorted, by definition.
-		if (m.size() <= 1) {
-			return m;
-		}
-	    // Recursive case. First, divide the list into equal-sized sublists
-		int middlePoint = m.size()/2;
-		List<T> leftList = m.subList(0, middlePoint);
-		List<T> rightList = m.subList(middlePoint, m.size());
-
-	    // Recursively sort both sublists.
-		leftList = mergeSort(leftList);
-		rightList = mergeSort(rightList);
-	
-	    // Then merge the now-sorted sublists.
-	    return merge(leftList, rightList);
+	// iBegin is inclusive; iEnd is exclusive (A[iEnd] is not in the set).
+	private <T> void topDownSplitMerge(Object[] A, int iBegin, int iEnd, Object[] B, Comparator<? super T> c) {
+	    if(iEnd - iBegin < 2)                       // if run size == 1
+	        return;                                 //   consider it sorted
+	    // recursively split runs into two halves until run size == 1,
+	    // then merge them and return back up the call chain
+	    int iMiddle = (iEnd + iBegin) / 2;              // iMiddle = mid point
+	    topDownSplitMerge(A, iBegin,  iMiddle, B, c);  // split / merge left  half
+	    topDownSplitMerge(A, iMiddle,    iEnd, B, c);  // split / merge right half
+	    topDownMerge(A, iBegin, iMiddle, iEnd, B, c);  // merge the two half runs
+	    copy(B, iBegin, iEnd, A);              // copy the merged runs back to A
 	}
 
-	private  <T extends Comparable<? super T>> List<T> merge(List<T> leftList, List<T> rightList) {
-		List<T> result = new ArrayList<T>();
-		Iterator<T> leftItr = leftList.iterator();
-		Iterator<T> rightItr = rightList.iterator();
-		T leftElement = null, rightElement = null;
-		boolean doMerge = leftItr.hasNext() && rightItr.hasNext();
-		if (doMerge) {
-			leftElement = leftItr.next();
-			rightElement = rightItr.next();
-		}
-		while (doMerge) {
-			if (leftElement.compareTo(rightElement) <= 0) {
-				result.add(leftElement);
-				if (leftItr.hasNext()) {
-					 leftElement = leftItr.next();
-				} else {
-					doMerge = false;
-					result.add(rightElement);
-				}
-			} else {
-				result.add(rightElement);
-				if (rightItr.hasNext()) {
-					rightElement = rightItr.next();
-				} else {
-					doMerge = false;
-					result.add(leftElement);
-				}
-			}
-		}
-
-		// Either left or right may have elements left; consume them.
-	    // (Only one of the following loops will actually be entered.)
-		while (leftItr.hasNext()) {
-			result.add(leftItr.next());
-		}
-		while (rightItr.hasNext()) {
-			result.add(rightItr.next());
-		}
-	    return result;
+	//  Left half is A[iBegin:iMiddle-1].
+	// Right half is A[iMiddle:iEnd-1   ].
+	private <T> void topDownMerge(Object[] A, int iBegin, int iMiddle, int iEnd, Object[] B, Comparator<? super T> c) {
+	    int i = iBegin, j = iMiddle;
+	    
+	    // While there are elements in the left or right runs...
+	    for (int k=iBegin; k<iEnd; k++) {
+	        // If left run head exists and is <= existing right run head.
+	        if (i < iMiddle && (j >= iEnd || compare(A[i], A[j], c) <= 0)) {
+	            B[k] = A[i];
+	            i = i + 1;
+	        } else {
+	            B[k] = A[j];
+	            j = j + 1;    
+	        }
+	    } 
 	}
 
-	public <T> void sort(List<T> list, Comparator<? super T> c) {
-		List<T> result = mergeSort(list, c);
-		list.clear();
-		list.addAll(result);
-	}
-
-	private <T> List<T> mergeSort(List<T> m, Comparator<? super T> c) {
-	    // Base case. A list of zero or one elements is sorted, by definition.
-		if (m.size() <= 1) {
-			return m;
-		}
-	    // Recursive case. First, divide the list into equal-sized sublists
-		int middlePoint = m.size()/2;
-		List<T> leftList = m.subList(0, middlePoint);
-		List<T> rightList = m.subList(middlePoint, m.size());
-
-	    // Recursively sort both sublists.
-		leftList = mergeSort(leftList, c);
-		rightList = mergeSort(rightList, c);
-	
-	    // Then merge the now-sorted sublists.
-	    return merge(leftList, rightList, c);
-	}
-
-	private  <T> List<T> merge(List<T> leftList, List<T> rightList, Comparator<? super T> c) {
-		List<T> result = new ArrayList<T>();
-		Iterator<T> leftItr = leftList.iterator();
-		Iterator<T> rightItr = rightList.iterator();
-		T leftElement = null, rightElement = null;
-		boolean doMerge = leftItr.hasNext() && rightItr.hasNext();
-		if (doMerge) {
-			leftElement = leftItr.next();
-			rightElement = rightItr.next();
-		}
-		while (doMerge) {
-			if (c.compare(leftElement, rightElement) <= 0) {
-				result.add(leftElement);
-				if (leftItr.hasNext()) {
-					 leftElement = leftItr.next();
-				} else {
-					doMerge = false;
-					result.add(rightElement);
-				}
-			} else {
-				result.add(rightElement);
-				if (rightItr.hasNext()) {
-					rightElement = rightItr.next();
-				} else {
-					doMerge = false;
-					result.add(leftElement);
-				}
-			}
-		}
-
-		// Either left or right may have elements left; consume them.
-	    // (Only one of the following loops will actually be entered.)
-		while (leftItr.hasNext()) {
-			result.add(leftItr.next());
-		}
-		while (rightItr.hasNext()) {
-			result.add(rightItr.next());
-		}
-	    return result;
+	private void copy(Object[] B, int iBegin, int iEnd, Object[] A)
+	{
+	    for(int k = iBegin; k < iEnd; k++)
+	        A[k] = B[k];
 	}
 }
