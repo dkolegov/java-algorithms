@@ -45,4 +45,10 @@ public abstract class Sorter {
 		array[i] = array[j];
 		array[j] = tmp;
 	}
+
+	protected void copy(Object[] dist, Object[] src) {
+		for (int i=0; i<src.length; i++) {
+			dist[i] = src[i];
+		}
+	}
 }

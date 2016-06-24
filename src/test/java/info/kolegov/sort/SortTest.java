@@ -1,7 +1,6 @@
 package info.kolegov.sort;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -19,18 +18,7 @@ import info.kolegov.sort.quicksort.LomutoQuickSorter;
 
 public class SortTest {
 
-	private Comparator<Integer> c = new Comparator<Integer>() {
-
-		public int compare(Integer arg0, Integer arg1) {
-			if (arg0 > arg1) {
-				return -1;
-			} else if (arg0 < arg1) {
-				return 1;
-			} else {
-				return 0;
-			}
-		}
-	};
+	private Comparator<Integer> c = (a, b) -> a > b ? -1 : (a < b ? 1 : 0);
 
 	private List<Integer> list;
 
@@ -110,5 +98,23 @@ public class SortTest {
 	public void testSelectionSort() {
 		list = createShuffledIntList(25);
 		testSort(new SelectionSorter(), list);
+	}
+
+	@Test
+	public void testBubbleSort() {
+		list = createShuffledIntList(25);
+		testSort(new BubbleSorter(), list);
+	}
+
+	@Test
+	public void testTreeSort() {
+		list = createShuffledIntList(25);
+		testSort(new TreeSorter(), list);
+	}
+
+	@Test
+	public void testShellSort() {
+		list = createShuffledIntList(25);
+		testSort(new ShellSorter(), list);
 	}
 }

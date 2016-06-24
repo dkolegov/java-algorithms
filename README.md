@@ -57,4 +57,25 @@ To be confident with the algorithms you should know Java SE and its patterns.
 		Implementation`info.kolegov.sort.SelectionSorter`
     </td>
   </tr>
+  <tr>
+    <td>Bubble sort</td>
+    <td>
+		Main resource is https://en.wikipedia.org/wiki/Bubble_sort.
+		Implementation`info.kolegov.sort.BubbleSorter`
+    </td>
+  </tr>
+  <tr>
+    <td>Tree sort</td>
+    <td>
+		Main resource is https://en.wikipedia.org/wiki/Binary_tree_sort.
+		Implementation`info.kolegov.sort.TreeSorter`
+    </td>
+  </tr>
+    <tr>
+    <td>Shellsort</td>
+    <td>
+		Main resource is https://en.wikipedia.org/wiki/Shellsort.
+		Implementation`info.kolegov.sort.ShellSorter`
+    </td>
+  </tr>
 </table>
