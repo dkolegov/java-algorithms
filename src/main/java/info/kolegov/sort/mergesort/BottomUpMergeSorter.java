@@ -24,15 +24,6 @@ public class BottomUpMergeSorter extends Sorter {
 	    }
 	}
 
-	private <T> void copy(Object[] dist, Object[] src) {
-		for (int i=0; i<dist.length; i++) {
-			if (src[i] != null) {
-				dist[i] = src[i];
-			}
-		}
-			
-	}
-
 	private <T> void bottomUpMerge(Object[] list, int iLeft, int iRight, int iEnd, Object[] temp,  Comparator<? super T> c) {
 	    int i = iLeft, j = iRight;
 

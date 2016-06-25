@@ -79,3 +79,54 @@ To be confident with the algorithms you should know Java SE and its patterns.
     </td>
   </tr>
 </table>
+- Algorithms with strings.
+<table>
+  <tr>
+    <th width="300px">Strings</th><th width="300px"></th>
+  </tr>
+  <tr>
+    <td>Isomorphic String</td>
+    <td>
+		Main resource is http://www.programcreek.com/2014/05/leetcode-isomorphic-strings-java/.
+		Implementation`info.kolegov.string.IsomorphicString`
+    </td>
+  </tr>
+  <tr>
+    <td>Reverse Words in a String</td>
+    <td>
+		Main resource is http://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/.
+		Implementation`info.kolegov.string.ReverseWordsInString`
+    </td>
+  </tr>
+  <tr>
+    <td>Word Ladder</td>
+    <td>
+		Main resource is http://www.programcreek.com/2012/12/leetcode-word-ladder/.
+		Implementation`info.kolegov.string.WordLadder`
+    </td>
+  </tr>
+</table>
+- Algorithms on graphs.
+<table>
+  <tr>
+    <th width="300px">Graphs</th><th width="300px"></th>
+  </tr>
+  <tr>
+    <td>Breadth-first search (BFS)</td>
+    <td>
+    Implementation`info.kolegov.graph.BreadthFirstSearcher`
+		Main resources are:
+	* https://en.wikipedia.org/wiki/Breadth-first_search
+	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
+    </td>
+  </tr>
+  <tr>
+    <td>Depth-first search (DFS)</td>
+    <td>
+    Implementation`info.kolegov.graph.DepthFirstSearcher`
+		Main resources are:
+	* https://en.wikipedia.org/wiki/Depth-first_search
+	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
+    </td>
+  </tr>
+</table>
