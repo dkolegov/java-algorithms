@@ -149,6 +149,7 @@ To be confident with the algorithms you should know Java SE and its patterns.
 	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
     </td>
   </tr>
+</table>
 - Other algorithms.
 <table>
   <tr>
