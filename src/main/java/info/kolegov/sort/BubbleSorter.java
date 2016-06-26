@@ -2,6 +2,8 @@ package info.kolegov.sort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
+
 /**
  * Optimized bubble sort
  * @author Dmitry
@@ -16,7 +18,7 @@ public class BubbleSorter extends Sorter {
 			int newn = 0;
 			for (int i=1; i<n; i++) {
 				if (compare(array[i-1], array[i], c) > 0) {
-					swap(array, i-1, i);
+					ArrayUtils.swap(array, i-1, i);
 					newn = i;
 				}
 			}

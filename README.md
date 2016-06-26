@@ -79,6 +79,26 @@ To be confident with the algorithms you should know Java SE and its patterns.
     </td>
   </tr>
 </table>
+- Algorithms with arrays.
+<table>
+  <tr>
+    <th width="300px">Arrays</th><th width="300px"></th>
+  </tr>
+  <tr>
+    <td>Kth Largest Element</td>
+    <td>
+		Main resource is http://www.programcreek.com/2014/05/leetcode-kth-largest-element-in-an-array-java/.
+		Implementation`info.kolegov.array.KthLargestElement`
+    </td>
+  </tr>
+  <tr>
+    <td>Rotate an array</td>
+    <td>
+		Main resource is http://www.programcreek.com/2015/03/rotate-array-in-java/.
+		Implementation`info.kolegov.array.Rotate`
+    </td>
+  </tr>
+</table>
 - Algorithms with strings.
 <table>
   <tr>
@@ -127,6 +147,15 @@ To be confident with the algorithms you should know Java SE and its patterns.
 		Main resources are:
 	* https://en.wikipedia.org/wiki/Depth-first_search
 	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
+    </td>
+  </tr>
+- Other algorithms.
+<table>
+  <tr>
+    <td>Merge Intervals</td>
+    <td>
+    Main resource is http://www.programcreek.com/2012/12/leetcode-merge-intervals/.
+    Implementation`info.kolegov.other.MergeIntervals`
     </td>
   </tr>
 </table>

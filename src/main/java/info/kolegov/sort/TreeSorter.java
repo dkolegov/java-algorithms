@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import info.kolegov.array.ArrayUtils;
 import info.kolegov.datastructure.BinaryTree;
 
 public class TreeSorter extends Sorter {
@@ -19,7 +20,7 @@ public class TreeSorter extends Sorter {
 		// retrieve sorted array from the built tree.
 		List<T> result = new ArrayList<>();
 	    inOrder(searchTree, result);
-	    copy(array, result.toArray());
+	    ArrayUtils.copy(array, result.toArray());
 	}
 
 

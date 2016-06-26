@@ -2,6 +2,7 @@ package info.kolegov.sort.heapsort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
 import info.kolegov.datastructure.BinaryHeap;
 import info.kolegov.sort.Sorter;
 
@@ -19,7 +20,7 @@ public class SiftDownHeapsorter extends Sorter {
 	    int end = count - 1;
 	    while (end > 0) {
 	        //(a[0] is the root and largest value. The swap moves it in front of the sorted elements.)
-	        swap(list, end, 0);
+	        ArrayUtils.swap(list, end, 0);
 	        //(the heap size is reduced by one)
 	        end--;
 	        //(the swap ruined the heap property, so restore it)
@@ -71,7 +72,7 @@ public class SiftDownHeapsorter extends Sorter {
                 // children are valid, this means that we are done.)
                 return;
             } else {
-                swap(list, root, swap);
+            	ArrayUtils.swap(list, root, swap);
                 root = swap;            //(repeat to continue sifting down the child now)
             }
         }

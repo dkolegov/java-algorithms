@@ -2,6 +2,7 @@ package info.kolegov.sort.quicksort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
 import info.kolegov.sort.Sorter;
 
 /**
@@ -40,7 +41,7 @@ public class HoareQuickSorter extends Sorter {
 			if (i >= j) {
 				return j;
 			}
-			swap(list, i, j);
+			ArrayUtils.swap(list, i, j);
 		} while (true);
 	}
 

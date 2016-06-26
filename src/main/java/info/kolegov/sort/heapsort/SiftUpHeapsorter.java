@@ -2,6 +2,7 @@ package info.kolegov.sort.heapsort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
 import info.kolegov.datastructure.BinaryHeap;
 import info.kolegov.sort.Sorter;
 
@@ -17,7 +18,7 @@ public class SiftUpHeapsorter extends Sorter {
 	    int end = count - 1;
 	    while (end > 0) {
 	        //(list[0] is the root and largest value. The swap moves it in front of the sorted elements.)
-	        swap(list, end, 0);
+	    	ArrayUtils.swap(list, end, 0);
 
 	        heapify(list, end, c);
 	        end--;
@@ -51,7 +52,7 @@ public class SiftUpHeapsorter extends Sorter {
 		while (child > start) {
 			int parent = BinaryHeap.iParent(child);
 			if (compare(list[parent], list[child], c) < 0) { //(out of max-heap order)
-				swap(list, parent, child);
+				ArrayUtils.swap(list, parent, child);
 				child = parent; //(repeat to continue sifting up the parent now)
 			} else {
 				return;

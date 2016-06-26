@@ -2,6 +2,7 @@ package info.kolegov.sort.quicksort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
 import info.kolegov.sort.Sorter;
 
 /**
@@ -32,14 +33,14 @@ public class LomutoQuickSorter extends Sorter {
 		int j = lo;
 		while (j<=i) {
 			if (compare(list[j], pivot, c) >= 0) {
-				swap(list, i, j);
+				ArrayUtils.swap(list, i, j);
 				i--;
 			} else {
 				j++;
 			}
 		}
 		i++;
-		swap(list, i, hi);
+		ArrayUtils.swap(list, i, hi);
 		return i;
 	}
 }

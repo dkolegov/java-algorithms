@@ -39,16 +39,4 @@ public abstract class Sorter {
 			return c.compare((T) a,(T) b);
 		}
 	}
-
-	protected void swap(Object[] array, int i, int j) {
-		Object tmp = array[i];
-		array[i] = array[j];
-		array[j] = tmp;
-	}
-
-	protected void copy(Object[] dist, Object[] src) {
-		for (int i=0; i<src.length; i++) {
-			dist[i] = src[i];
-		}
-	}
 }

@@ -2,6 +2,7 @@ package info.kolegov.sort.mergesort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
 import info.kolegov.sort.Sorter;
 
 public class BottomUpMergeSorter extends Sorter {
@@ -20,7 +21,7 @@ public class BottomUpMergeSorter extends Sorter {
 	            		temp,
 	            		c);
 	        }
-	        copy(list, temp);
+	        ArrayUtils.copy(list, temp);
 	    }
 	}
 

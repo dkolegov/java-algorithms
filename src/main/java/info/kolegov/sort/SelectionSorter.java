@@ -2,6 +2,8 @@ package info.kolegov.sort;
 
 import java.util.Comparator;
 
+import info.kolegov.array.ArrayUtils;
+
 public class SelectionSorter extends Sorter {
 
 	public <T> void sort(Object[] list, Comparator<? super T> c) {
@@ -24,7 +26,7 @@ public class SelectionSorter extends Sorter {
 		    }
 
 		    if(iMin != j) {
-		        swap(list, j, iMin);
+		    	ArrayUtils.swap(list, j, iMin);
 		    }
 		}
 	}

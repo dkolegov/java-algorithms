@@ -28,6 +28,6 @@ public class StringAlgorithmsTest {
 		String start = "hit",
 				end = "cog";
 		Set<String> dict = new HashSet<>(Arrays.asList("mit", "hot","dot","dog","lot","log"));
-		Assert.assertEquals(WordLadder.ladderLength(start, end, dict), 5); // hit -> hot -> dot -> lot -> log -> cog
+		Assert.assertEquals(5, WordLadder.ladderLength(start, end, dict)); // hit -> hot -> dot -> lot -> log -> cog
 	}
 }
