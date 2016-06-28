@@ -30,4 +30,20 @@ public class StringAlgorithmsTest {
 		Set<String> dict = new HashSet<>(Arrays.asList("mit", "hot","dot","dog","lot","log"));
 		Assert.assertEquals(5, WordLadder.ladderLength(start, end, dict)); // hit -> hot -> dot -> lot -> log -> cog
 	}
+
+	@Test
+	public void testValidPalindrome() {
+		String str = "Was it a car or a cat I saw?";
+		Assert.assertTrue(ValidPalindrome.isValidPalindrome(str));
+		str = "Was it a car or a dog I saw?";
+		Assert.assertFalse(ValidPalindrome.isValidPalindrome(str));
+	}
+
+	@Test
+	public void testLengthOfLastWord() {
+		String str = "Was it a car or a cat I saw?";
+		Assert.assertEquals(3, LengthofLastWord.lengthOfLastWord(str));
+		str = "how much wood whould a woodchuck chuck if a woodchuck could chuck wood";
+		Assert.assertEquals(4, LengthofLastWord.lengthOfLastWord(str));
+	}
 }

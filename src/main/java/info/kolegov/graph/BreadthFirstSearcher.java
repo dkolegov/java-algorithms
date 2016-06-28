@@ -1,7 +1,6 @@
 package info.kolegov.graph;
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 
 import info.kolegov.datastructure.Graph;
