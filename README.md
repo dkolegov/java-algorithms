@@ -20,8 +20,8 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Quicksort.
 		Two different algorithms:
-	* Hoare (`info.kolegov.sort.quicksort.HoareQuickSorter`)
-	* Lomuto (`info.kolegov.sort.quicksort.LomutoQuickSorter`)
+	<br/>Hoare (`info.kolegov.sort.quicksort.HoareQuickSorter`)
+	<br/>Lomuto (`info.kolegov.sort.quicksort.LomutoQuickSorter`)
     </td>
   </tr>
   <tr>
@@ -29,9 +29,9 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Merge_sort.
 		Two different algorithms:
-	* Top-down implementation
+	<br/>Top-down implementation
 	(`info.kolegov.sort.mergesort.BottomUpMergeSorter`)
-	* Bottom-up implementation
+	<br/>Bottom-up implementation
 	(`info.kolegov.sort.mergesort.TopDownMergeSorter`)
     </td>
   </tr>
@@ -40,9 +40,9 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Heapsort.
 		Two different algorithms:
-	* Top-down implementation
+	<br/>Top-down implementation
 	(`info.kolegov.sort.heapsort.SiftDownHeapsorter`)
-	* Bottom-up implementation
+	<br/>Bottom-up implementation
 	(`info.kolegov.sort.heapsort.SiftUpHeapsorter`)
     </td>
   </tr>
@@ -50,35 +50,35 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>Insertion sort (Сортировка вставками)</td>
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Insertion_sort.
-		Implementation`info.kolegov.sort.InsertionSorter`
+		<br/>Implementation`info.kolegov.sort.InsertionSorter`
     </td>
   </tr>
   <tr>
     <td>Selection sort (Сортировка выбором)</td>
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Selection_sort.
-		Implementation`info.kolegov.sort.SelectionSorter`
+		<br/>Implementation`info.kolegov.sort.SelectionSorter`
     </td>
   </tr>
   <tr>
     <td>Bubble sort (Сортировка пузырьком)</td>
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Bubble_sort.
-		Implementation`info.kolegov.sort.BubbleSorter`
+		<br/>Implementation`info.kolegov.sort.BubbleSorter`
     </td>
   </tr>
   <tr>
     <td>Tree sort (Сортировка с помощью двоичного дерева)</td>
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Binary_tree_sort.
-		Implementation`info.kolegov.sort.TreeSorter`
+		<br/>Implementation`info.kolegov.sort.TreeSorter`
     </td>
   </tr>
     <tr>
     <td>Shellsort (Сортировка Шелла)</td>
     <td>
 		Main resource is https://en.wikipedia.org/wiki/Shellsort.
-		Implementation`info.kolegov.sort.ShellSorter`
+		<br/>Implementation`info.kolegov.sort.ShellSorter`
     </td>
   </tr>
 </table>
@@ -92,21 +92,21 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>Kth Largest Element (К-ый наибольший элемент)</td>
     <td>
 		Main resource is http://www.programcreek.com/2014/05/leetcode-kth-largest-element-in-an-array-java/.
-		Implementation`info.kolegov.array.KthLargestElement`
+		<br/>Implementation`info.kolegov.array.KthLargestElement`
     </td>
   </tr>
   <tr>
     <td>Rotate an array (Сдвиг(?) массива)</td>
     <td>
 		Main resource is http://www.programcreek.com/2015/03/rotate-array-in-java/.
-		Implementation`info.kolegov.array.Rotate`
+		<br/>Implementation`info.kolegov.array.Rotate`
     </td>
   </tr>
   <tr>
     <td>Find Peak Element (Найти точку максимума)</td>
     <td>
 		Main resource is http://www.programcreek.com/2014/02/leetcode-find-peak-element/.
-		Implementation`info.kolegov.array.FindPeakElement`
+		<br/>Implementation`info.kolegov.array.FindPeakElement`
     </td>
   </tr>
 </table>
@@ -120,28 +120,28 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>Isomorphic String (Изоморфные строки)</td>
     <td>
 		Main resource is http://www.programcreek.com/2014/05/leetcode-isomorphic-strings-java/.
-		Implementation`info.kolegov.string.IsomorphicString`
+		<br/>Implementation`info.kolegov.string.IsomorphicString`
     </td>
   </tr>
   <tr>
     <td>Reverse Words in a String (Реверсирование(?) слов в строке)</td>
     <td>
 		Main resource is http://www.programcreek.com/2014/05/leetcode-reverse-words-in-a-string-ii-java/.
-		Implementation`info.kolegov.string.ReverseWordsInString`
+		<br/>Implementation`info.kolegov.string.ReverseWordsInString`
     </td>
   </tr>
   <tr>
     <td>Word Ladder (Игра "Цепь слов")</td>
     <td>
 		Main resource is http://www.programcreek.com/2012/12/leetcode-word-ladder/.
-		Implementation`info.kolegov.string.WordLadder`
+		<br/>Implementation`info.kolegov.string.WordLadder`
     </td>
   </tr>
   <tr>
     <td>Length of Last Word</td>
     <td>
 		Main resource is http://www.programcreek.com/2014/05/leetcode-length-of-last-word-java/.
-		Implementation`info.kolegov.string.LengthofLastWord`
+		<br/>Implementation`info.kolegov.string.LengthofLastWord`
     </td>
   </tr>
 </table>
@@ -156,8 +156,8 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>
     Implementation`info.kolegov.graph.BreadthFirstSearcher`
 		Main resources are:
-	* https://en.wikipedia.org/wiki/Breadth-first_search
-	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
+	<br/>https://en.wikipedia.org/wiki/Breadth-first_search
+	<br/>Data Structures & Algorithms in Java. Robert Lafore. Second Edition
     </td>
   </tr>
   <tr>
@@ -165,8 +165,8 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     <td>
     Implementation`info.kolegov.graph.DepthFirstSearcher`
 		Main resources are:
-	* https://en.wikipedia.org/wiki/Depth-first_search
-	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
+	<br/>https://en.wikipedia.org/wiki/Depth-first_search
+	<br/>Data Structures & Algorithms in Java. Robert Lafore. Second Edition
     </td>
   </tr>
 </table>
