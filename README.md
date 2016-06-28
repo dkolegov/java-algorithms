@@ -4,6 +4,7 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
 - Этот проект создается как пример реализации различных алгоритмов, написанных на Java.
 Чтобы Вы могли легко ориентироваться в алгоритмах, Вам нужно, как минимум, знать Java SE 8 и его паттерны.
 Описание алгоритмов смотрите в исходных файлах.
+
 #### Prerequisites
 - Java SE 8
 - Maven > 3.0 
@@ -81,6 +82,7 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     </td>
   </tr>
 </table>
+
 - Algorithms with `Arrays` (Алгоритмы, основанные на массивах).
 <table>
   <tr>
@@ -108,6 +110,7 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     </td>
   </tr>
 </table>
+
 - Algorithms with `Strings` (Алгоритмы со строками).
 <table>
   <tr>
@@ -134,7 +137,15 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
 		Implementation`info.kolegov.string.WordLadder`
     </td>
   </tr>
+  <tr>
+    <td>Length of Last Word</td>
+    <td>
+		Main resource is http://www.programcreek.com/2014/05/leetcode-length-of-last-word-java/.
+		Implementation`info.kolegov.string.LengthofLastWord`
+    </td>
+  </tr>
 </table>
+
 - Algorithms on `Graphs` (Алгоритмы на графах).
 <table>
   <tr>
@@ -158,14 +169,8 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
 	* Data Structures & Algorithms in Java. Robert Lafore. Second Edition
     </td>
   </tr>
-  <tr>
-    <td>Length of Last Word (Длина последнего слова)</td>
-    <td>
-		Main resource is http://www.programcreek.com/2014/05/leetcode-length-of-last-word-java/.
-		Implementation`info.kolegov.string.LengthofLastWord`
-    </td>
-  </tr
 </table>
+
 - Other algorithms (Другие алгоритмы).
 <table>
   <tr>
