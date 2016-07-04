@@ -169,6 +169,13 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
 	<br/>Data Structures & Algorithms in Java. Robert Lafore. Second Edition
     </td>
   </tr>
+  <tr>
+    <td>
+    Implementation`info.kolegov.graph.MinimumSpanningTree`
+		Main resource is:
+	<br/>Data Structures & Algorithms in Java. Robert Lafore. Second Edition
+    </td>
+  </tr>
 </table>
 
 - Other algorithms (Другие алгоритмы).

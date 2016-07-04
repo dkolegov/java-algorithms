@@ -81,6 +81,10 @@ public class Graph {
 		System.out.println();
 	}
 
+	public void displayEdge(int v1, int v2) {
+		System.out.printf("%s%s ", vertexList[v1].label, vertexList[v2].label);
+	}
+
 	public void reset() {
 		for(int j=0; j<getNVerts(); j++) {
 			getVertex(j).setVisited(false);
