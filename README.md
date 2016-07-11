@@ -81,6 +81,14 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
 		<br/>Implementation`info.kolegov.sort.ShellSorter`
     </td>
   </tr>
+  </tr>
+    <tr>
+    <td>Odd–even sort<br/>(Сортировка чёт-нечет)</td>
+    <td>
+		Main resource is https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort.
+		<br/>Implementation`info.kolegov.sort.OddEvenSorter`
+    </td>
+  </tr>
 </table>
 
 - Algorithms with `Arrays` (Алгоритмы, основанные на массивах).

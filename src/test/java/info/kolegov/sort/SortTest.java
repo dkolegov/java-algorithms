@@ -117,4 +117,10 @@ public class SortTest {
 		list = createShuffledIntList(25);
 		testSort(new ShellSorter(), list);
 	}
+
+	@Test
+	public void testOddEvenSort() {
+		list = createShuffledIntList(25);
+		testSort(new OddEvenSorter(), list);
+	}
 }
