@@ -170,6 +170,7 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
     </td>
   </tr>
   <tr>
+    <td>Minimum Spanning Tree (MST)<br/>(Минимальное остовное дерево)</td>
     <td>
     Implementation`info.kolegov.graph.MinimumSpanningTree`
 		Main resource is:

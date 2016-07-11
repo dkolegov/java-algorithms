@@ -29,17 +29,13 @@ public class LomutoQuickSorter extends Sorter {
 	private <T> int partition(Object[]  list, int lo, int hi, Comparator<? super T> c) {
 		// choose pivot
 		Object pivot = list[hi];
-		int i = hi-1;
-		int j = lo;
-		while (j<=i) {
-			if (compare(list[j], pivot, c) >= 0) {
+		int i = lo;
+		for (int j=lo; j<hi; j++) {
+			if (compare(list[j], pivot, c) <= 0) {
 				ArrayUtils.swap(list, i, j);
-				i--;
-			} else {
-				j++;
+				i++;
 			}
 		}
-		i++;
 		ArrayUtils.swap(list, i, hi);
 		return i;
 	}
