@@ -38,4 +38,11 @@ public class ArraysAlgorithmsTest {
 		testArray = new int[]{2,3,4,5,6,7,1};
 		Assert.assertEquals(5, FindPeakElement.findPeak(testArray));
 	}
+
+	@Test
+	public void testMaximumSubarray() {
+		int[] in = new int[]{-2,1,-3,4,-1,2,1,-5,4};
+		int[] expected = new int[]{4, -1, 2, 1};
+		Assert.assertArrayEquals(expected, MaximumSubarray.maxSubArray(in));
+	}
 }

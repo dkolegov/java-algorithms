@@ -117,6 +117,13 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
 		<br/>Implementation`info.kolegov.array.FindPeakElement`
     </td>
   </tr>
+  <tr>
+    <td>Maximum subarray problem<br/>(Проблема максимального подмассива(?))</td>
+    <td>
+		Main resource is http://www.programcreek.com/2013/02/leetcode-maximum-subarray-java/.
+		<br/>Implementation`info.kolegov.array.MaximumSubarray`
+    </td>
+  </tr>
 </table>
 
 - Algorithms with `Strings` (Алгоритмы со строками).
