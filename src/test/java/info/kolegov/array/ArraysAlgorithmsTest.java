@@ -44,5 +44,8 @@ public class ArraysAlgorithmsTest {
 		int[] in = new int[]{-2,1,-3,4,-1,2,1,-5,4};
 		int[] expected = new int[]{4, -1, 2, 1};
 		Assert.assertArrayEquals(expected, MaximumSubarray.maxSubArray(in));
+		in = new int[]{-1, 1, 0, 2, -3, -1, -2, 0, -1, 1};
+		expected = new int[]{1,0,2};
+		Assert.assertArrayEquals(expected, MaximumSubarray.maxSubArray(in));
 	}
 }

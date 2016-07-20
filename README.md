@@ -120,7 +120,7 @@ To be confident with the algorithms you should know Java SE 8 and its patterns.
   <tr>
     <td>Maximum subarray problem<br/>(Проблема максимального подмассива(?))</td>
     <td>
-		Main resource is http://www.programcreek.com/2013/02/leetcode-maximum-subarray-java/.
+		Main resource is http://e-maxx.ru/algo/maximum_average_segment.
 		<br/>Implementation`info.kolegov.array.MaximumSubarray`
     </td>
   </tr>

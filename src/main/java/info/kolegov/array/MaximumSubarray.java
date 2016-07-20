@@ -3,20 +3,30 @@ package info.kolegov.array;
 import java.util.Arrays;
 
 public class MaximumSubarray {
+
+	/**
+	 * Jay Kadane, 1984
+	 * @param A
+	 * @return
+	 */
 	public static int[] maxSubArray(int[] A) {
-		 int newsum=A[0];
-		 int max=A[0];
-		 int start=0, end=0;
-		 for(int i=1; i<A.length; i++){
-			  newsum=Math.max(newsum+A[i],A[i]);
-			  if (newsum+A[i] < A[i]) {
-		  		start = i+1;
-			  }
-			  if (max > newsum) {
-		  		end = i-1;
-			  }
-			  max= Math.max(max, newsum);
-		 }
-		 return Arrays.copyOfRange(A, start, end);
+		int ans = A[0],
+			ans_l = 0,
+			ans_r = 0,
+			sum = 0,
+			minus_pos = -1;
+			for (int r=0; r<A.length; r++) {
+				sum += A[r];
+				if (sum > ans) {
+					ans = sum;
+					ans_l = minus_pos + 1;
+					ans_r = r;
+				}
+				if (sum < 0) {
+					sum = 0;
+					minus_pos = r;
+				}
+			}
+		 return Arrays.copyOfRange(A, ans_l, ans_r+1);
 	 }
 }
